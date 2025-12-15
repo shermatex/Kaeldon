@@ -58,8 +58,16 @@ a:hover{ text-decoration: underline; }
   );
 
   display: flex;
-  align-items: flex-end;   /* 
+  align-items: flex-end;   /* 👈 pushes content to bottom */
   justify-content: center;
+}
+
+.hero-inner{
+  width: min(980px, calc(100% - 40px));
+  padding-bottom: 48px;   /* 👈 distance from bottom edge */
+  text-align: center;
+}
+
 }
 
 .brand{
