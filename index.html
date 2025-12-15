@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>KÆLDØN</title>
 
-  <link rel="stylesheet" href="style.css" />
   <meta name="description" content="KÆLDØN operates between worlds — techno, trance, and chill for immersion." />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
 
+<body>
   <!-- HERO -->
   <header class="hero" role="banner" aria-label="KÆLDØN hero">
     <div class="overlay">
@@ -21,6 +21,7 @@
         <div class="cta-row">
           <a class="btn" href="#listen">Listen</a>
           <a class="btn btn-ghost" href="#about">About</a>
+          <a class="btn btn-ghost" href="#connect">Connect</a>
         </div>
       </div>
     </div>
@@ -33,32 +34,30 @@
       <div class="container">
         <header class="section-head">
           <h2>Listen</h2>
-          <p class="sub">Tap the cover to play/pause a preview.</p>
+          <p class="sub">Tap the cover to play/pause the preview.</p>
         </header>
 
-        <!-- Preview Card -->
         <div class="card">
           <button id="previewBtn" class="preview-btn" type="button" aria-label="Play preview" title="Play preview">
-           
-            <img id="previewThumb" src="./kaeldon_hero.png" alt="KÆLDØN preview cover" />
+            <img id="previewThumb" src="./kaeldon_cover.png" alt="KÆLDØN cover art" />
             <span id="previewOverlay" class="play-overlay" aria-hidden="true">►</span>
           </button>
 
           <div class="card-meta">
             <div class="track">
-              <div class="track-title">Preview Track</div>
+              <div class="track-title">Valkyrju-ferð</div>
               <div class="track-note">Techno / Trance / Chill</div>
             </div>
+
+            <div class="status" id="statusText" aria-live="polite"></div>
           </div>
 
-         <audio id="previewAudio" preload="metadata" playsinline>
-            <source src="./Valkyrju-ferð.mp3" type="audio/mpeg" />
-            Your browser does not support the audio element.
-          </audio>
+          <!-- src set in JS using encodeURI to safely handle special characters like ð -->
+          <audio id="previewAudio" preload="metadata" playsinline></audio>
         </div>
 
         <p class="micro">
-          
+          If playback fails, it’s almost always a filename/path issue. This build uses your exact filenames and safe URL encoding.
         </p>
       </div>
     </section>
@@ -93,10 +92,9 @@
         </header>
 
         <ul class="links">
-            <li><a href="https://open.spotify.com/artist/4CdrbLeTwe0oz78XPZRjBk" target="_blank">Spotify</a></li>
-            <li><a href="https://music.apple.com/us/search?term=k%C3%A6ld%C3%B8n" target="_blank">Apple Music</a></li>
-            <li><a href="https://music.amazon.com/search/K%C3%86LD%C3%98N?filter=IsLibrary%7Cfalse&sc=none " target="_blank">Amazon Music</a></li>
-                      
+          <li><a href="https://open.spotify.com/artist/4CdrbLeTwe0oz78XPZRjBk" target="_blank" rel="noopener">Spotify</a></li>
+          <li><a href="https://music.apple.com/us/search?term=k%C3%A6ld%C3%B8n" target="_blank" rel="noopener">Apple Music</a></li>
+          <li><a href="https://music.amazon.com/search/K%C3%86LD%C3%98N?filter=IsLibrary%7Cfalse&sc=none" target="_blank" rel="noopener">Amazon Music</a></li>
         </ul>
       </div>
     </section>
@@ -110,42 +108,23 @@
   </footer>
 
   <script>
-    // Preview audio: play/pause
     (function () {
       const audio   = document.getElementById('previewAudio');
       const btn     = document.getElementById('previewBtn');
       const overlay = document.getElementById('previewOverlay');
+      const status  = document.getElementById('statusText');
 
-      if (!audio || !btn || !overlay) return;
+      // Your exact filenames (kept as-is)
+      const MP3_FILE = 'Valkyrju-ferð.mp3';
+
+      // Encode safely for URLs (handles ð)
+      audio.src = encodeURI('./' + MP3_FILE);
+
+      function setStatus(msg) {
+        if (status) status.textContent = msg || '';
+      }
 
       function setOverlay(isPlaying) {
         overlay.classList.toggle('playing', isPlaying);
         overlay.textContent = isPlaying ? '❚❚' : '►';
-        btn.setAttribute('aria-label', isPlaying ? 'Pause preview' : 'Play preview');
-        btn.setAttribute('title', isPlaying ? 'Pause preview' : 'Play preview');
-      }
-
-      async function toggle() {
-        try {
-          if (audio.paused) {
-            await audio.play();
-            setOverlay(true);
-          } else {
-            audio.pause();
-            setOverlay(false);
-          }
-        } catch (err) {
-          console.warn('Playback blocked/failed:', err);
-        }
-      }
-
-      btn.addEventListener('click', toggle);
-      audio.addEventListener('ended', () => setOverlay(false));
-    })();
-
-    // Footer year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-
-</body>
-</html>
+        btn.setAttribut
