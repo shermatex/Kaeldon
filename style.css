@@ -282,21 +282,24 @@ a:hover{ text-decoration: underline; }
   color: var(--dim);
 }
 
-/* Mobile hero: prevent side-cropping of the logo */
+/* ======================================================
+   MOBILE HERO IMAGE (Option B)
+   ====================================================== */
+
 @media (max-width: 700px){
   .hero{
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-image: url('kaeldon_mobile_hero.png');
+    background-size: cover;
     background-position: center top;
     min-height: 72vh;
   }
 
-  /* Make the bottom fade less tall on mobile */
+  /* Slightly reduce the bottom fade for mobile */
   .hero::after{
-    height: 28%;
+    height: 26%;
   }
 
-  /* Slightly reduce bottom spacing so content fits */
+  /* Tighter spacing so content stays visible */
   .hero-inner{
     padding-bottom: 28px;
   }
