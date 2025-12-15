@@ -62,17 +62,6 @@ a:hover{ text-decoration: underline; }
   justify-content: center;
 }
 
-.hero-inner{
-  width: min(980px, calc(100% - 40px));
-  padding-bottom: 48px;   /* 
-  text-align: center;
-}
-
-
-.hero-inner{
-  width: min(980px, calc(100% - 40px));
-}
-
 .brand{
   margin: 0;
   font-size: clamp(56px, 9vw, 150px);
