@@ -50,24 +50,15 @@ a:hover{ text-decoration: underline; }
 .overlay{
   width: 100%;
   height: 100%;
-  padding: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0,0.15),
-    rgba(0,0,0,0.75)
-  );
-
+  padding: 64px 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.50), rgba(0,0,0,0.70));
   display: flex;
-  align-items: flex-end;   /* 👈 pushes content to bottom */
+  align-items: center;
   justify-content: center;
 }
 
 .hero-inner{
   width: min(980px, calc(100% - 40px));
-  padding-bottom: 48px;   /* 👈 distance from bottom edge */
-  text-align: center;
-}
-
 }
 
 .brand{
