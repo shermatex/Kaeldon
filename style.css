@@ -59,6 +59,8 @@ a:hover{ text-decoration: underline; }
 
 .hero-inner{
   width: min(980px, calc(100% - 40px));
+  padding-bottom: 48px:
+  text-align: center;
 }
 
 .brand{
