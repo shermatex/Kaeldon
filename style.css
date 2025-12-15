@@ -1,36 +1,31 @@
-/* ====== Base ====== */
 :root{
-  --bg: #0b0f14;
-  --panel: rgba(255,255,255,0.06);
-  --panel2: rgba(255,255,255,0.09);
+  --bg: #070b10;
   --text: rgba(255,255,255,0.92);
   --muted: rgba(255,255,255,0.72);
   --dim: rgba(255,255,255,0.55);
   --line: rgba(255,255,255,0.14);
-  --accent: #7bd7ff; /* cold neon - restrained */
-  --accent2: #a78bfa; /* violet hint */
+  --panel: rgba(255,255,255,0.06);
   --shadow: 0 18px 40px rgba(0,0,0,0.55);
   --radius: 16px;
+  --accent: #7bd7ff;
 }
 
-* { box-sizing: border-box; }
+*{ box-sizing: border-box; }
 
-html, body { height: 100%; }
+html, body{ height: 100%; }
 
 body{
   margin: 0;
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   line-height: 1.6;
   color: var(--text);
-  background: radial-gradient(1200px 700px at 20% 0%, rgba(123,215,255,0.10), transparent 55%),
-              radial-gradient(900px 600px at 90% 10%, rgba(167,139,250,0.10), transparent 55%),
-              var(--bg);
+  background:
+    radial-gradient(1100px 700px at 15% 0%, rgba(123,215,255,0.10), transparent 55%),
+    radial-gradient(900px 600px at 90% 10%, rgba(167,139,250,0.10), transparent 55%),
+    var(--bg);
 }
 
-a{
-  color: var(--accent);
-  text-decoration: none;
-}
+a{ color: var(--accent); text-decoration: none; }
 a:hover{ text-decoration: underline; }
 
 .container{
@@ -38,7 +33,7 @@ a:hover{ text-decoration: underline; }
   margin: 0 auto;
 }
 
-/* ====== Hero ====== */
+/* HERO */
 .hero{
   position: relative;
   min-height: 78vh;
@@ -47,8 +42,7 @@ a:hover{ text-decoration: underline; }
   justify-content: center;
   text-align: center;
 
-  /* IMPORTANT: hero image filename */
-  background-image: url('hero.png'); /* <- change to kaeldon_hero.png if needed */
+  background-image: url('kaeldon_hero.png');
   background-size: cover;
   background-position: center;
 }
@@ -57,14 +51,14 @@ a:hover{ text-decoration: underline; }
   width: 100%;
   height: 100%;
   padding: 64px 0;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.62));
+  background: linear-gradient(to bottom, rgba(0,0,0,0.50), rgba(0,0,0,0.70));
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .hero-inner{
-  width: min(920px, calc(100% - 40px));
+  width: min(980px, calc(100% - 40px));
 }
 
 .brand{
@@ -106,15 +100,10 @@ a:hover{ text-decoration: underline; }
   box-shadow: 0 10px 24px rgba(0,0,0,0.35);
 }
 .btn:hover{ text-decoration: none; background: rgba(255,255,255,0.12); }
+.btn-ghost{ background: transparent; }
 
-.btn-ghost{
-  background: transparent;
-}
-
-/* ====== Sections ====== */
-.section{
-  padding: 64px 0;
-}
+/* SECTIONS */
+.section{ padding: 64px 0; }
 
 .section-muted{
   background: linear-gradient(to bottom, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
@@ -129,12 +118,9 @@ a:hover{ text-decoration: underline; }
   text-transform: uppercase;
 }
 
-.sub{
-  margin: 10px 0 0;
-  color: var(--muted);
-}
+.sub{ margin: 10px 0 0; color: var(--muted); }
 
-/* ====== Card / Preview ====== */
+/* PREVIEW CARD */
 .card{
   margin-top: 26px;
   background: var(--panel);
@@ -174,19 +160,22 @@ a:hover{ text-decoration: underline; }
   pointer-events: none;
 }
 
-.play-overlay.playing{
-  opacity: 0;
-}
+.play-overlay.playing{ opacity: 0; }
 
 .card-meta{
   padding: 16px 18px 18px;
   background: linear-gradient(to bottom, rgba(255,255,255,0.02), rgba(255,255,255,0.04));
   border-top: 1px solid var(--line);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
 .track-title{
-  font-weight: 700;
-  letter-spacing: 0.03em;
+  font-weight: 800;
+  letter-spacing: 0.02em;
 }
 
 .track-note{
@@ -195,20 +184,18 @@ a:hover{ text-decoration: underline; }
   font-size: 14px;
 }
 
+.status{
+  color: var(--muted);
+  font-size: 13px;
+}
+
 .micro{
   margin: 14px 0 0;
   color: var(--dim);
   font-size: 13px;
 }
 
-code{
-  background: rgba(255,255,255,0.08);
-  padding: 2px 6px;
-  border-radius: 8px;
-  border: 1px solid rgba(255,255,255,0.12);
-}
-
-/* ====== About prose ====== */
+/* ABOUT */
 .prose{
   margin-top: 18px;
   color: var(--muted);
@@ -216,13 +203,13 @@ code{
 }
 .prose strong{ color: var(--text); }
 
-/* ====== Links ====== */
+/* LINKS */
 .links{
   margin: 18px 0 0;
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 10px;
 }
 
@@ -238,7 +225,7 @@ code{
   background: rgba(255,255,255,0.08);
 }
 
-/* ====== Footer ====== */
+/* FOOTER */
 .footer{
   padding: 28px 0;
   border-top: 1px solid var(--line);
