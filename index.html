@@ -115,7 +115,7 @@
       const status  = document.getElementById('statusText');
 
       // Your exact filenames (kept as-is)
-      const MP3_FILE = 'Valkyrju-ferð.mp3';
+      const MP3_FILE = 'Valkyrju-fero.mp3';
 
       // Encode safely for URLs (handles ð)
       audio.src = encodeURI('./' + MP3_FILE);
@@ -146,7 +146,7 @@
         } catch (err) {
           console.warn('Playback failed:', err);
           setOverlay(false);
-          setStatus('Playback failed. Check that Valkyrju-ferð.mp3 is in the same folder as index.html.');
+          setStatus('Playback failed. Check that Valkyrju-fero.mp3 is in the same folder as index.html.');
         }
       }
 
@@ -159,7 +159,7 @@
 
       audio.addEventListener('error', () => {
         setOverlay(false);
-        setStatus('Audio not found or blocked. Confirm Valkyrju-ferð.mp3 is in the repo root and committed.');
+        setStatus('Audio not found or blocked. Confirm Valkyrju-fero.mp3 is in the repo root and committed.');
       });
 
       document.getElementById('year').textContent = new Date().getFullYear();
