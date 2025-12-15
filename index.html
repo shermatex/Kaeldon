@@ -127,4 +127,43 @@
       function setOverlay(isPlaying) {
         overlay.classList.toggle('playing', isPlaying);
         overlay.textContent = isPlaying ? '❚❚' : '►';
-        btn.setAttribut
+        btn.setAttribute('aria-label', isPlaying ? 'Pause preview' : 'Play preview');
+        btn.setAttribute('title', isPlaying ? 'Pause preview' : 'Play preview');
+      }
+
+      async function toggle() {
+        try {
+          if (audio.paused) {
+            setStatus('Loading…');
+            await audio.play(); // must be user-initiated (this click is)
+            setOverlay(true);
+            setStatus('');
+          } else {
+            audio.pause();
+            setOverlay(false);
+            setStatus('');
+          }
+        } catch (err) {
+          console.warn('Playback failed:', err);
+          setOverlay(false);
+          setStatus('Playback failed. Check that Valkyrju-ferð.mp3 is in the same folder as index.html.');
+        }
+      }
+
+      btn.addEventListener('click', toggle);
+
+      audio.addEventListener('ended', () => {
+        setOverlay(false);
+        setStatus('');
+      });
+
+      audio.addEventListener('error', () => {
+        setOverlay(false);
+        setStatus('Audio not found or blocked. Confirm Valkyrju-ferð.mp3 is in the repo root and committed.');
+      });
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
