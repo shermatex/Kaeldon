@@ -98,4 +98,67 @@
   </main>
 
   <footer class="footer">
-    <div cl
+    <div class="container">
+      <p>© <span id="year"></span> KÆLDØN. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const audio   = document.getElementById('previewAudio');
+      const btn     = document.getElementById('previewBtn');
+      const overlay = document.getElementById('previewOverlay');
+      const status  = document.getElementById('statusText');
+
+      // Your current filename
+      const MP3_FILE = 'Valkyrju-fero.mp3';
+
+      audio.src = encodeURI('./' + MP3_FILE);
+
+      function setStatus(msg) {
+        if (status) status.textContent = msg || '';
+      }
+
+      function setOverlay(isPlaying) {
+        overlay.classList.toggle('playing', isPlaying);
+        overlay.textContent = isPlaying ? '❚❚' : '►';
+        btn.setAttribute('aria-label', isPlaying ? 'Pause preview' : 'Play preview');
+        btn.setAttribute('title', isPlaying ? 'Pause preview' : 'Play preview');
+      }
+
+      async function toggle() {
+        try {
+          if (audio.paused) {
+            setStatus('Loading…');
+            await audio.play();
+            setOverlay(true);
+            setStatus('');
+          } else {
+            audio.pause();
+            setOverlay(false);
+            setStatus('');
+          }
+        } catch (err) {
+          console.warn('Playback failed:', err);
+          setOverlay(false);
+          setStatus('Playback failed. Check the MP3 filename and that it is in the repo root.');
+        }
+      }
+
+      btn.addEventListener('click', toggle);
+
+      audio.addEventListener('ended', () => {
+        setOverlay(false);
+        setStatus('');
+      });
+
+      audio.addEventListener('error', () => {
+        setOverlay(false);
+        setStatus('Audio not found. Confirm the MP3 is in the repo root and committed.');
+      });
+
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
