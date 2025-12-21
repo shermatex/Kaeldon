@@ -28,6 +28,17 @@ body{
 .tagline{color:var(--muted)}
 .madefor{color:var(--muted);max-width:700px;margin:auto}
 
+.hero-copy{
+  margin-bottom: 26px; /* guarantees separation from buttons */
+}
+
+@media (max-width: 700px){
+  .hero-copy{
+    margin-bottom: 20px;
+  }
+}
+
+
 .btn{padding:12px 20px;border-radius:999px;border:1px solid #fff3;background:#fff1;color:#fff;text-decoration:none}
 .primary{background:#7bd7ff22}
 .ghost{background:transparent}
