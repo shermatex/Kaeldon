@@ -10,32 +10,21 @@
 </head>
 
 <body>
-  <!-- HERO / PORTAL -->
+  <!-- HERO -->
   <header class="hero" role="banner" aria-label="KÆLDØN hero">
     <div class="overlay">
       <div class="hero-inner">
-        <div class="brand">
-          <h1 class="logo" aria-label="KÆLDØN">KÆLDØN</h1>
-          <p class="tagline">Operates between worlds.</p>
-          <p class="madefor">Made for the hours when the world goes quiet and the mind goes deeper.</p>
-        </div>
-
-        <!-- Portal cover (your instruction: main page image is link to the Gallery) -->
-        <button id="enterGalleryBtn" class="portal" type="button" aria-label="Enter the Music Gallery">
-          <img src="./kaeldon_cover.png" alt="KÆLDØN cover art — Enter Gallery" />
-          <span class="portal-badge">ENTER MUSIC GALLERY</span>
-          <span class="portal-hint">Tap to open</span>
-        </button>
+        <h1 class="logo" aria-label="KÆLDØN">KÆLDØN</h1>
+        <p class="tagline">Operates between worlds.</p>
+        <p class="madefor">Made for the hours when the world goes quiet and the mind goes deeper.</p>
 
         <div class="cta-row">
-          <a class="btn" href="#gallery">Gallery</a>
+          <a class="btn btn-primary" href="#gallery">Enter Gallery</a>
           <a class="btn btn-ghost" href="#about">About</a>
           <a class="btn btn-ghost" href="#connect">Connect</a>
         </div>
 
-        <p class="micro hero-micro">
-          Tip: In the gallery, click any artwork to open a full-screen listening experience.
-        </p>
+        <p class="hero-tip">Tip: In the gallery, click any artwork to open a full-screen listening experience.</p>
       </div>
     </div>
   </header>
@@ -46,19 +35,120 @@
       <div class="container">
         <header class="section-head">
           <h2>Music Gallery</h2>
-          <p class="sub">
-            Not a playlist. A gallery. Choose a piece — the artwork opens and the track plays inside the world of KÆLDØN.
-          </p>
+          <p class="sub">Not a playlist. A gallery. Choose a piece — the artwork opens and the track plays inside the world of KÆLDØN.</p>
         </header>
 
-        <div class="gallery-grid" id="galleryGrid" aria-label="KÆLDØN Music Gallery">
-          <!-- Cards injected by JS -->
-        </div>
+        <div class="gallery-grid" aria-label="Music Gallery Grid">
+          <!-- LIVE TRACKS (5) -->
+          <button class="art-card"
+            type="button"
+            data-title="Beneath Clear Water"
+            data-mood="Tranquil / Unnerving"
+            data-img="Beneath_Clear_Water.png"
+            data-mp3="BENEATH CLEAR WATER.mp3"
+          >
+            <span class="art-thumb">
+              <img src="./Beneath_Clear_Water.png" alt="Beneath Clear Water artwork" loading="lazy" />
+            </span>
+            <span class="art-meta">
+              <span class="art-title">Beneath Clear Water</span>
+              <span class="art-sub">Tranquil / Unnerving</span>
+            </span>
+          </button>
 
-        <div class="gallery-footer">
-          <div class="pill">
-            <span class="pill-dot" aria-hidden="true"></span>
-            <span><strong>Pro move:</strong> keep them here first. “Listen on” comes later — inside the modal.</span>
+          <button class="art-card"
+            type="button"
+            data-title="Blood Under Ice"
+            data-mood="Cold / Threatening"
+            data-img="Blood_Under_Ice.png"
+            data-mp3="BLOOD UNDER ICE.mp3"
+          >
+            <span class="art-thumb">
+              <img src="./Blood_Under_Ice.png" alt="Blood Under Ice artwork" loading="lazy" />
+            </span>
+            <span class="art-meta">
+              <span class="art-title">Blood Under Ice</span>
+              <span class="art-sub">Cold / Threatening</span>
+            </span>
+          </button>
+
+          <button class="art-card"
+            type="button"
+            data-title="Dark Descent"
+            data-mood="Otherworld / Abyssal"
+            data-img="Dark_Descent.png"
+            data-mp3="DARK DESCENT.mp3"
+          >
+            <span class="art-thumb">
+              <img src="./Dark_Descent.png" alt="Dark Descent artwork" loading="lazy" />
+            </span>
+            <span class="art-meta">
+              <span class="art-title">Dark Descent</span>
+              <span class="art-sub">Otherworld / Abyssal</span>
+            </span>
+          </button>
+
+          <button class="art-card"
+            type="button"
+            data-title="Valhalla Awaits"
+            data-mood="Mythic / Triumphant"
+            data-img="Valhalla_Awaits.png"
+            data-mp3="Valhalla Awaits.mp3"
+          >
+            <span class="art-thumb">
+              <img src="./Valhalla_Awaits.png" alt="Valhalla Awaits artwork" loading="lazy" />
+            </span>
+            <span class="art-meta">
+              <span class="art-title">Valhalla Awaits</span>
+              <span class="art-sub">Mythic / Triumphant</span>
+            </span>
+          </button>
+
+          <button class="art-card"
+            type="button"
+            data-title="Valkyrju-ferð"
+            data-mood="Ritual / Ascendant"
+            data-img="Valkury_fuerd.png"
+            data-mp3="Valkyrju-fero.mp3"
+          >
+            <span class="art-thumb">
+              <img src="./Valkury_fuerd.png" alt="Valkyrju-ferð artwork" loading="lazy" />
+            </span>
+            <span class="art-meta">
+              <span class="art-title">Valkyrju-ferð</span>
+              <span class="art-sub">Ritual / Ascendant</span>
+            </span>
+          </button>
+
+          <!-- COMING SOON (3) — keeps the grid balanced -->
+          <div class="art-card art-card--soon" aria-label="Coming soon">
+            <span class="art-thumb art-thumb--soon">
+              <span class="soon-mark">Coming Soon</span>
+            </span>
+            <span class="art-meta">
+              <span class="art-title">New Piece</span>
+              <span class="art-sub">In creation</span>
+            </span>
+          </div>
+
+          <div class="art-card art-card--soon" aria-label="Coming soon">
+            <span class="art-thumb art-thumb--soon">
+              <span class="soon-mark">Coming Soon</span>
+            </span>
+            <span class="art-meta">
+              <span class="art-title">New Piece</span>
+              <span class="art-sub">In creation</span>
+            </span>
+          </div>
+
+          <div class="art-card art-card--soon" aria-label="Coming soon">
+            <span class="art-thumb art-thumb--soon">
+              <span class="soon-mark">Coming Soon</span>
+            </span>
+            <span class="art-meta">
+              <span class="art-title">New Piece</span>
+              <span class="art-sub">In creation</span>
+            </span>
           </div>
         </div>
       </div>
@@ -67,19 +157,19 @@
     <!-- ABOUT -->
     <section id="about" class="section section-muted">
       <div class="container">
-        <header class="section-head">
+        <header class="section-head section-head--center">
           <h2>About KÆLDØN</h2>
         </header>
 
-        <div class="prose">
+        <div class="prose prose--center">
           <p><strong>KÆLDØN operates between worlds.</strong></p>
           <p>
             Blending techno, trance, and chill into a single continuum, KÆLDØN creates music designed for immersion rather than moments.
-            The sound lives between movement and stillness — where rhythm becomes atmosphere and melody dissolves into feeling.
+            His sound lives in the space between movement and stillness — where rhythm becomes atmosphere and melody dissolves into feeling.
           </p>
           <p>
-            Genre is raw material. Pulsing basslines, hypnotic textures, and expansive soundscapes are layered with restraint and intention,
-            drawing from Nordic minimalism, deep electronic traditions, and the quiet power of repetition.
+            Rather than chasing genre boundaries, KÆLDØN treats them as raw material. Pulsing basslines, hypnotic textures, and expansive soundscapes
+            are layered with restraint and intention, drawing influence from Nordic minimalism, deep electronic traditions, and the quiet power of repetition.
           </p>
         </div>
       </div>
@@ -88,9 +178,9 @@
     <!-- CONNECT -->
     <section id="connect" class="section">
       <div class="container">
-        <header class="section-head">
+        <header class="section-head section-head--center">
           <h2>Connect</h2>
-          <p class="sub">When you’re ready to leave the gallery, find KÆLDØN on your platforms.</p>
+          <p class="sub">Find KÆLDØN on your platforms.</p>
         </header>
 
         <ul class="links">
@@ -108,427 +198,229 @@
     </div>
   </footer>
 
-  <!-- GALLERY MODAL -->
+  <!-- MODAL -->
   <div id="modal" class="modal" aria-hidden="true">
     <div class="modal-backdrop" data-close="true"></div>
 
-    <div class="modal-panel" role="dialog" aria-modal="true" aria-label="Music Gallery Player">
+    <div class="modal-shell" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <button class="modal-close" type="button" aria-label="Close" data-close="true">✕</button>
 
-      <div class="modal-body">
-        <!-- Left: Artwork -->
-        <div class="art-stage" aria-label="Artwork stage">
-          <div class="art-frame">
-            <img id="modalArt" class="modal-art" src="" alt="" />
-            <div class="art-glow" aria-hidden="true"></div>
+      <div class="modal-art">
+        <img id="modalImg" alt="" />
+        <div class="modal-art-glow" aria-hidden="true"></div>
+      </div>
+
+      <div class="modal-panel">
+        <div class="modal-head">
+          <div>
+            <div id="modalTitle" class="modal-title"></div>
+            <div id="modalMood" class="modal-mood"></div>
           </div>
 
-          <div class="art-meta">
-            <div class="art-title-row">
-              <h3 id="modalTitle" class="art-title">—</h3>
-              <span id="modalTag" class="art-tag">—</span>
-            </div>
-            <p id="modalNote" class="art-note">—</p>
-
-            <div class="player">
-              <button id="btnPrev" class="icon-btn" type="button" aria-label="Previous track">⟵</button>
-              <button id="btnPlay" class="play-btn" type="button" aria-label="Play">►</button>
-              <button id="btnNext" class="icon-btn" type="button" aria-label="Next track">⟶</button>
-
-              <div class="time">
-                <span id="tCur">0:00</span>
-                <span class="time-dash">/</span>
-                <span id="tDur">0:00</span>
-              </div>
-            </div>
-
-            <div class="scrub">
-              <input id="seek" type="range" min="0" max="1000" value="0" aria-label="Seek" />
-            </div>
-
-            <div class="modal-actions">
-              <button id="listenOnBtn" class="btn btn-ghost btn-small" type="button" aria-label="Listen on your platform">
-                Listen on…
-              </button>
-              <a class="btn btn-small" href="#connect" data-close="true">Connect</a>
-            </div>
-
-            <p id="playerStatus" class="status" aria-live="polite"></p>
+          <div class="modal-controls">
+            <button id="prevBtn" class="icon-btn" type="button" aria-label="Previous">‹</button>
+            <button id="playBtn" class="icon-btn icon-btn--primary" type="button" aria-label="Play/Pause">►</button>
+            <button id="nextBtn" class="icon-btn" type="button" aria-label="Next">›</button>
           </div>
         </div>
 
-        <!-- Right: Track list -->
-        <aside class="tracklist" aria-label="Track list">
-          <div class="tracklist-head">
-            <div class="tracklist-title">Gallery Pieces</div>
-            <div class="tracklist-sub">Click to open + play</div>
+        <div class="modal-progress">
+          <span id="timeNow" class="time">0:00</span>
+          <input id="seek" class="seek" type="range" min="0" max="1000" value="0" aria-label="Seek" />
+          <span id="timeEnd" class="time">0:00</span>
+        </div>
+
+        <div class="modal-foot">
+          <div id="statusText" class="status" aria-live="polite"></div>
+
+          <div class="listen-outs">
+            <span class="listen-label">Later:</span>
+            <a class="pill" href="https://open.spotify.com/artist/4CdrbLeTwe0oz78XPZRjBk" target="_blank" rel="noopener">Spotify</a>
+            <a class="pill" href="https://music.apple.com/us/search?term=k%C3%A6ld%C3%B8n" target="_blank" rel="noopener">Apple Music</a>
+            <a class="pill" href="https://music.amazon.com/search/K%C3%86LD%C3%98N?filter=IsLibrary%7Cfalse&sc=none" target="_blank" rel="noopener">Amazon Music</a>
           </div>
-          <div id="trackList" class="tracklist-items">
-            <!-- Injected -->
-          </div>
-        </aside>
+        </div>
+
+        <audio id="audio" preload="metadata" playsinline></audio>
       </div>
     </div>
   </div>
-
-  <!-- LISTEN ON POPUP -->
-  <div id="listenPopup" class="popup" aria-hidden="true">
-    <div class="popup-backdrop" data-popup-close="true"></div>
-    <div class="popup-panel" role="dialog" aria-modal="true" aria-label="Listen on your platform">
-      <button class="popup-close" type="button" aria-label="Close" data-popup-close="true">✕</button>
-      <h3 class="popup-title">Listen on your platform</h3>
-      <p class="popup-sub">You’ve heard it here. Now take it with you.</p>
-
-      <div class="popup-links">
-        <a href="https://open.spotify.com/artist/4CdrbLeTwe0oz78XPZRjBk" target="_blank" rel="noopener">Spotify</a>
-        <a href="https://music.apple.com/us/search?term=k%C3%A6ld%C3%B8n" target="_blank" rel="noopener">Apple Music</a>
-        <a href="https://music.amazon.com/search/K%C3%86LD%C3%98N?filter=IsLibrary%7Cfalse&sc=none" target="_blank" rel="noopener">Amazon Music</a>
-      </div>
-
-      <p class="popup-micro">Don’t rush this. The gallery is designed to be the first listen.</p>
-    </div>
-  </div>
-
-  <audio id="audio" preload="metadata" playsinline></audio>
 
   <script>
     (function () {
-      // =========================
-      // FILE MAP (your exact filenames)
-      // =========================
-      const TRACKS = [
-        {
-          title: "Beneath Clear Water",
-          tag: "Tranquil / Unnerving",
-          note: "Hope on the horizon. Something watching from below.",
-          mp3: "BENEATH CLEAR WATER.mp3",
-          img: "Beneath_Clear_Water.png"
-        },
-        {
-          title: "Blood Under Ice",
-          tag: "Cold / Threatening",
-          note: "Stillness that feels like a trap. Pressure under silence.",
-          mp3: "BLOOD UNDER ICE.mp3",
-          img: "Blood_Under_Ice.png"
-        },
-        {
-          title: "Dark Descent",
-          tag: "Otherworld / Abyssal",
-          note: "Not underwater — into another world. A doorway that shouldn’t exist.",
-          mp3: "DARK DESCENT.mp3",
-          img: "Dark_Descent.png"
-        },
-        {
-          title: "Valhalla Awaits",
-          tag: "Mythic / Triumphant",
-          note: "The hall calls. The sky answers.",
-          mp3: "Valhalla Awaits.mp3",
-          img: "Valhalla_Awaits.png"
-        },
-        {
-          title: "Valkyrju-ferð",
-          tag: "Ritual / Ascendant",
-          note: "The ride begins. Not fate — momentum.",
-          mp3: "Valkyrju-fero.mp3",
-          img: "Valkury_fuerd.png"
-        }
-      ];
-
-      // =========================
-      // ELEMENTS
-      // =========================
-      const year = document.getElementById("year");
+      const year = document.getElementById('year');
       year.textContent = new Date().getFullYear();
 
-      const enterGalleryBtn = document.getElementById("enterGalleryBtn");
-      const galleryGrid = document.getElementById("galleryGrid");
+      const cards = Array.from(document.querySelectorAll('.art-card[data-mp3]'));
 
-      const modal = document.getElementById("modal");
-      const modalArt = document.getElementById("modalArt");
-      const modalTitle = document.getElementById("modalTitle");
-      const modalTag = document.getElementById("modalTag");
-      const modalNote = document.getElementById("modalNote");
-      const playerStatus = document.getElementById("playerStatus");
+      const modal = document.getElementById('modal');
+      const modalImg = document.getElementById('modalImg');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalMood = document.getElementById('modalMood');
+      const status = document.getElementById('statusText');
 
-      const trackList = document.getElementById("trackList");
+      const audio = document.getElementById('audio');
+      const playBtn = document.getElementById('playBtn');
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
 
-      const audio = document.getElementById("audio");
-      const btnPlay = document.getElementById("btnPlay");
-      const btnPrev = document.getElementById("btnPrev");
-      const btnNext = document.getElementById("btnNext");
-      const seek = document.getElementById("seek");
-      const tCur = document.getElementById("tCur");
-      const tDur = document.getElementById("tDur");
+      const seek = document.getElementById('seek');
+      const timeNow = document.getElementById('timeNow');
+      const timeEnd = document.getElementById('timeEnd');
 
-      const listenOnBtn = document.getElementById("listenOnBtn");
-      const listenPopup = document.getElementById("listenPopup");
-
-      let activeIndex = 0;
+      let idx = 0;
       let isOpen = false;
-      let seekDragging = false;
 
-      // =========================
-      // HELPERS
-      // =========================
       function fmtTime(sec) {
-        if (!isFinite(sec) || sec < 0) return "0:00";
+        if (!isFinite(sec) || sec < 0) return '0:00';
         const m = Math.floor(sec / 60);
         const s = Math.floor(sec % 60);
-        return m + ":" + String(s).padStart(2, "0");
+        return `${m}:${String(s).padStart(2, '0')}`;
       }
 
       function setStatus(msg) {
-        playerStatus.textContent = msg || "";
+        status.textContent = msg || '';
       }
 
-      function setPlayUI(isPlaying) {
-        btnPlay.textContent = isPlaying ? "❚❚" : "►";
-        btnPlay.setAttribute("aria-label", isPlaying ? "Pause" : "Play");
-
-        // Animate the artwork ONLY when playing (your instruction)
-        modalArt.classList.toggle("is-playing", isPlaying);
-      }
-
-      function safeSrc(path) {
-        // Keep spaces + special chars safe
-        return encodeURI("./" + path);
+      function setPlayIcon(playing) {
+        playBtn.textContent = playing ? '❚❚' : '►';
+        playBtn.setAttribute('aria-label', playing ? 'Pause' : 'Play');
       }
 
       function openModal() {
-        modal.setAttribute("aria-hidden", "false");
-        modal.classList.add("open");
-        document.body.classList.add("no-scroll");
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('no-scroll');
         isOpen = true;
       }
 
       function closeModal() {
-        modal.setAttribute("aria-hidden", "true");
-        modal.classList.remove("open");
-        document.body.classList.remove("no-scroll");
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('no-scroll');
         isOpen = false;
 
-        // stop playback when closing (prevents “ghost audio”)
         audio.pause();
-        setPlayUI(false);
-        setStatus("");
+        setPlayIcon(false);
+        setStatus('');
       }
 
-      function openPopup() {
-        listenPopup.setAttribute("aria-hidden", "false");
-        listenPopup.classList.add("open");
-      }
+      function loadTrack(i, autoPlay = true) {
+        idx = (i + cards.length) % cards.length;
+        const c = cards[idx];
 
-      function closePopup() {
-        listenPopup.setAttribute("aria-hidden", "true");
-        listenPopup.classList.remove("open");
-      }
+        const title = c.dataset.title || '';
+        const mood = c.dataset.mood || '';
+        const img = c.dataset.img || '';
+        const mp3 = c.dataset.mp3 || '';
 
-      function setActiveListItem() {
-        const items = trackList.querySelectorAll(".trackitem");
-        items.forEach((el, i) => el.classList.toggle("active", i === activeIndex));
-      }
+        modalTitle.textContent = title;
+        modalMood.textContent = mood;
 
-      function renderGalleryCards() {
-        galleryGrid.innerHTML = TRACKS.map((t, i) => `
-          <button class="gcard" type="button" data-index="${i}" aria-label="Open ${t.title}">
-            <div class="gthumb">
-              <img src="${safeSrc(t.img)}" alt="${t.title} artwork" loading="lazy" />
-              <div class="gveil" aria-hidden="true"></div>
-              <div class="glabel">
-                <div class="gtitle">${t.title}</div>
-                <div class="gtag">${t.tag}</div>
-              </div>
-            </div>
-          </button>
-        `).join("");
-      }
+        modalImg.src = encodeURI('./' + img);
+        modalImg.alt = title + ' artwork';
 
-      function renderTrackList() {
-        trackList.innerHTML = TRACKS.map((t, i) => `
-          <button class="trackitem" type="button" data-index="${i}" aria-label="Play ${t.title}">
-            <div class="ti-title">${t.title}</div>
-            <div class="ti-sub">${t.tag}</div>
-          </button>
-        `).join("");
-      }
-
-      function loadTrack(index, { autoplay = true } = {}) {
-        const t = TRACKS[index];
-        activeIndex = index;
-
-        modalTitle.textContent = t.title;
-        modalTag.textContent = t.tag;
-        modalNote.textContent = t.note;
-
-        modalArt.src = safeSrc(t.img);
-        modalArt.alt = t.title + " artwork";
-
-        audio.src = safeSrc(t.mp3);
+        audio.src = encodeURI('./' + mp3);
         audio.load();
 
-        setActiveListItem();
-        setStatus("Loading…");
-        setPlayUI(false);
+        seek.value = 0;
+        timeNow.textContent = '0:00';
+        timeEnd.textContent = '0:00';
 
-        if (autoplay) {
-          audio.play()
-            .then(() => {
-              setPlayUI(true);
-              setStatus("");
-            })
-            .catch(() => {
-              setPlayUI(false);
-              setStatus("Playback blocked. Tap Play.");
-            });
+        setStatus('Loading…');
+
+        if (autoPlay) {
+          audio.play().then(() => {
+            setPlayIcon(true);
+            setStatus('');
+          }).catch(() => {
+            setPlayIcon(false);
+            setStatus('Playback blocked. Tap play.');
+          });
         } else {
-          setStatus("");
+          setPlayIcon(false);
+          setStatus('');
         }
       }
 
-      // =========================
-      // EVENTS
-      // =========================
-      enterGalleryBtn.addEventListener("click", () => {
-        // Open the gallery modal on the first piece (you can change default if you want)
-        openModal();
-        loadTrack(0, { autoplay: false });
-      });
-
-      galleryGrid.addEventListener("click", (e) => {
-        const btn = e.target.closest(".gcard");
-        if (!btn) return;
-
-        const idx = Number(btn.getAttribute("data-index"));
-        openModal();
-        loadTrack(idx, { autoplay: true });
-      });
-
-      trackList.addEventListener("click", (e) => {
-        const btn = e.target.closest(".trackitem");
-        if (!btn) return;
-
-        const idx = Number(btn.getAttribute("data-index"));
-        loadTrack(idx, { autoplay: true });
-      });
-
-      modal.addEventListener("click", (e) => {
-        const close = e.target.closest("[data-close='true']");
-        if (close) closeModal();
-      });
-
-      listenOnBtn.addEventListener("click", () => openPopup());
-      listenPopup.addEventListener("click", (e) => {
-        const close = e.target.closest("[data-popup-close='true']");
-        if (close) closePopup();
-      });
-
-      btnPlay.addEventListener("click", async () => {
-        try {
-          if (audio.paused) {
-            setStatus("Loading…");
-            await audio.play();
-            setPlayUI(true);
-            setStatus("");
-          } else {
-            audio.pause();
-            setPlayUI(false);
-            setStatus("");
-          }
-        } catch {
-          setPlayUI(false);
-          setStatus("Playback blocked. Try tapping again.");
-        }
-      });
-
-      btnPrev.addEventListener("click", () => {
-        const idx = (activeIndex - 1 + TRACKS.length) % TRACKS.length;
-        loadTrack(idx, { autoplay: true });
-      });
-
-      btnNext.addEventListener("click", () => {
-        const idx = (activeIndex + 1) % TRACKS.length;
-        loadTrack(idx, { autoplay: true });
-      });
-
-      // Keyboard controls
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape") {
-          if (listenPopup.classList.contains("open")) closePopup();
-          else if (isOpen) closeModal();
-        }
-
-        if (!isOpen) return;
-
-        if (e.key === " " || e.key === "Enter") {
-          // prevent page scrolling on space
-          if (e.target && (e.target.tagName === "BUTTON" || e.target.tagName === "A" || e.target.tagName === "INPUT")) return;
-          e.preventDefault();
-          btnPlay.click();
-        }
-
-        if (e.key === "ArrowLeft") btnPrev.click();
-        if (e.key === "ArrowRight") btnNext.click();
-      });
-
-      // Seek
-      seek.addEventListener("input", () => { seekDragging = true; });
-      seek.addEventListener("change", () => {
-        if (!audio.duration) return;
-        const pct = Number(seek.value) / 1000;
-        audio.currentTime = pct * audio.duration;
-        seekDragging = false;
-      });
-
-      // Audio updates
-      audio.addEventListener("loadedmetadata", () => {
-        tDur.textContent = fmtTime(audio.duration);
-        tCur.textContent = fmtTime(audio.currentTime);
-        seek.value = "0";
-        setStatus("");
-      });
-
-      audio.addEventListener("timeupdate", () => {
-        tCur.textContent = fmtTime(audio.currentTime);
-        if (audio.duration && !seekDragging) {
-          seek.value = String(Math.floor((audio.currentTime / audio.duration) * 1000));
-        }
-      });
-
-      audio.addEventListener("ended", () => {
-        setPlayUI(false);
-        setStatus("");
-        // Auto-advance feels “gallery-like”
-        const idx = (activeIndex + 1) % TRACKS.length;
-        loadTrack(idx, { autoplay: true });
-      });
-
-      audio.addEventListener("play", () => setPlayUI(true));
-      audio.addEventListener("pause", () => setPlayUI(false));
-
-      audio.addEventListener("error", () => {
-        setPlayUI(false);
-        setStatus("Audio not found. Confirm filenames + repo root + committed.");
-      });
-
-      // Smooth scroll to gallery section when hitting hero “Gallery” button
-      document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener("click", (e) => {
-          const href = a.getAttribute("href");
-          if (!href || href === "#") return;
-          const el = document.querySelector(href);
-          if (!el) return;
-          e.preventDefault();
-          el.scrollIntoView({ behavior: "smooth", block: "start" });
+      cards.forEach((c, i) => {
+        c.addEventListener('click', () => {
+          openModal();
+          loadTrack(i, true);
         });
       });
 
-      // Init
-      renderGalleryCards();
-      renderTrackList();
-      setActiveListItem();
+      // Close handlers
+      modal.addEventListener('click', (e) => {
+        const t = e.target;
+        if (t && t.dataset && t.dataset.close === 'true') closeModal();
+      });
 
-      // If someone lands with #gallery, don’t open modal automatically.
-      // They can choose.
+      document.addEventListener('keydown', (e) => {
+        if (!isOpen) return;
+        if (e.key === 'Escape') closeModal();
+        if (e.key === 'ArrowLeft') loadTrack(idx - 1, true);
+        if (e.key === 'ArrowRight') loadTrack(idx + 1, true);
+        if (e.key === ' ') {
+          e.preventDefault();
+          togglePlay();
+        }
+      });
+
+      function togglePlay() {
+        if (audio.paused) {
+          setStatus('Loading…');
+          audio.play().then(() => {
+            setPlayIcon(true);
+            setStatus('');
+          }).catch(() => {
+            setPlayIcon(false);
+            setStatus('Playback blocked. Tap play.');
+          });
+        } else {
+          audio.pause();
+          setPlayIcon(false);
+          setStatus('');
+        }
+      }
+
+      playBtn.addEventListener('click', togglePlay);
+      prevBtn.addEventListener('click', () => loadTrack(idx - 1, true));
+      nextBtn.addEventListener('click', () => loadTrack(idx + 1, true));
+
+      audio.addEventListener('loadedmetadata', () => {
+        timeEnd.textContent = fmtTime(audio.duration);
+        setStatus('');
+      });
+
+      audio.addEventListener('timeupdate', () => {
+        const d = audio.duration || 0;
+        const t = audio.currentTime || 0;
+        timeNow.textContent = fmtTime(t);
+
+        if (d > 0) {
+          const v = Math.min(1000, Math.max(0, Math.round((t / d) * 1000)));
+          seek.value = v;
+        }
+      });
+
+      audio.addEventListener('ended', () => {
+        setPlayIcon(false);
+        // Auto-advance keeps the gallery “flowing”
+        loadTrack(idx + 1, true);
+      });
+
+      audio.addEventListener('error', () => {
+        setPlayIcon(false);
+        setStatus('Audio not found. Confirm MP3 name + repo root + committed.');
+      });
+
+      // Seeking
+      seek.addEventListener('input', () => {
+        const d = audio.duration || 0;
+        if (!d) return;
+        audio.currentTime = (Number(seek.value) / 1000) * d;
+      });
     })();
   </script>
 </body>
